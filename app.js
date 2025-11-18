@@ -68,7 +68,7 @@ class AuthApp {
             .then(() => {
                 // 🚀 FEEDBACK DE SUCESSO ANTES DO REDIRECIONAMENTO
                 alert('Login efetuado com sucesso! Bem-vindo ao Dashboard.'); 
-                
+                window.location.href = "dashboard-screen";
                 this.loginForm.reset(); 
                 // O observador (onAuthStateChanged) será acionado logo após este .then()
             })
@@ -117,4 +117,5 @@ class AuthApp {
 // Inicia a aplicação quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
     new AuthApp();
+
 });
