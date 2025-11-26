@@ -16,7 +16,7 @@ self.addEventListener('install', event => {
       .then(cache => {
         console.log('Cache preenchido');
         return cache.addAll(urlsToCache);
-      })
+      }
       .catch(error => console.error(`Falha ao preencher o cache: ${error}`))
   );
 });
@@ -32,3 +32,4 @@ self.addEventListener('fetch', event => {
       })
   );
 });
+
