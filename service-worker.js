@@ -1,13 +1,7 @@
 
 const CACHE_NAME = 'auth-pwa-cache-v1';
 const urlsToCache = [
-  '/Pwa-FireBase/',
-  '/Pwa-FireBase/index.html',
-  '/Pwa-FireBase/styles.css',
-  '/Pwa-FireBase/app.js',
-  '/Pwa-FireBase/manifest.json',
-  '/Pwa-FireBase/icon-256x256.png',
-  '/Pwa-FireBase/icon-512x512.png'
+  '/Pwa-FireBase/'
 ];
 
 self.addEventListener('install', event => {
@@ -32,6 +26,7 @@ self.addEventListener('fetch', event => {
       })
   );
 });
+
 
 
 
