@@ -1,12 +1,12 @@
 const CACHE_NAME = 'auth-pwa-cache-v1';
 const urlsToCache = [
   '/',
-  '/Pwa-FireBase/index.html',
-  '/Pwa-FireBase/styles.css',
-  '/Pwa-FireBase/app.js',
-  '/Pwa-FireBase/manifest.json',
-  '/Pwa-FireBase/images/icon-256x256.png',
-  '/Pwa-FireBase/images/icon-512x512.png'
+  'index.html',
+  'styles.css',
+  'app.js',
+  'manifest.json',
+  'images/icon-256x256.png',
+  'images/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -15,10 +15,7 @@ self.addEventListener('install', event => {
       .then(cache => {
         console.log('Cache preenchido');
         return cache.addAll(urlsToCache);
-      })
-      .catch(error => {
-        console.error(`Falha ao preencher o cache: ${error}`);
-      })
+      });
   );
 });
 
@@ -36,4 +33,5 @@ self.addEventListener('fetch', event => {
   );
 
 });
+
 
