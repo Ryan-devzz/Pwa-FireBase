@@ -6,8 +6,8 @@ const urlsToCache = [
   '/Pwa-FireBase/styles.css',
   '/Pwa-FireBase/app.js',
   '/Pwa-FireBase/manifest.json',
-  '/Pwa-FireBase/images/icon-256x256.png',
-  '/Pwa-FireBase/images/icon-512x512.png'
+  '/Pwa-FireBase/icon-256x256.png',
+  '/Pwa-FireBase/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -32,5 +32,6 @@ self.addEventListener('fetch', event => {
       })
   );
 });
+
 
 
