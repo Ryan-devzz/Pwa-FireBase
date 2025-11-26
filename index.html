@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Firebase Auth</title>
+
+    <link rel="manifest" href="/Pwa-FireBase/manifest.json">
+    <link rel="stylesheet" href="/Pwa-FireBase/styles.css">
+    <link rel="icon" type="image/png" href="/Pwa-FireBase/images/favico.png">
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+</head>
+
+<body>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Nota: Certifique-se de que o service-worker.js está na raiz!
+                navigator.serviceWorker.register('/Pwa-FireBase/service-worker.js')
+                    .then(reg => console.log('Service Worker registrado:', reg.scope))
+                    .catch(err => console.error('Erro no Service Worker:', err));
+            });
+        }
+    </script>
+
+    <main id="app-container">
+
+        <section id="cadastro-screen" class="active-screen">
+            <h2>Criar Conta</h2>
+            <form id="cadastro-form">
+                <div class="input-group">
+                    <label for="cadastro-email">E-mail</label>
+                    <input type="email" id="cadastro-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="cadastro-senha">Senha</label>
+                    <input type="password" id="cadastro-senha" minlength="6" required>
+                </div>
+                <button type="submit" id="btn-cadastrar">Cadastrar</button>
+            </form>
+            <p class="switch-link">
+                Já tem conta? <a href="#" id="link-ir-login">Fazer Login</a>
+            </p>
+        </section>
+
+        <section id="login-screen" class="hidden-screen">
+            <h2>Acessar Conta</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" required>
+                </div>
+                <button type="submit" id="btn-login">Entrar</button>
+            </form>
+            <p class="switch-link">
+                Não tem conta? <a href="#" id="link-ir-cadastro">Criar Conta</a>
+            </p>
+        </section>
+
+        <section id="dashboard-screen" class="hidden-screen">
+            <h2>Bem-vindo!</h2>
+            <p>Você está logado. Seu email: <strong id="user-email-display"></strong></p>
+            <button id="btn-logout">Sair</button>
+        </section>
+
+    </main>
+
+    <script src="/Pwa-FireBase/app.js"></script>
+
+</body>
+
+</html>

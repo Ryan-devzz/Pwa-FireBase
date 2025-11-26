@@ -1,0 +1,20 @@
+{
+  "name": "Firebase PWA Login POO",
+  "short_name": "AuthApp",
+  "start_url": "/Pwa-FireBase/index.html",
+  "display": "standalone",
+  "background_color": "#f4f4f9",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "icon-256x256.png",
+      "sizes": "256x256",
+      "type": "png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "png"
+    }
+  ]
+}
