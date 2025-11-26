@@ -1,6 +1,6 @@
 const CACHE_NAME = 'auth-pwa-cache-v1';
 const urlsToCache = [
-  '/Pwa-FireBase/',
+  '/',
   '/Pwa-FireBase/index.html',
   '/Pwa-FireBase/styles.css',
   '/Pwa-FireBase/app.js',
@@ -34,4 +34,5 @@ self.addEventListener('fetch', event => {
         return fetch(event.request);
       })
   );
+
 });
